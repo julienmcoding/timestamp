@@ -24,8 +24,11 @@
       </ul>
 
       <h3>Example Output:</h3>
-      <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
+      <p>The time now is:</br>
+          <%
+          let utc = new Date().toUTCString();
+          let unix = new Date().getTime(); %>
+        <code>{ "unix": <%= unix %> "utc": <%= utc %> }</code>
       </p>
     </div>
     <div class="footer">

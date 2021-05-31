@@ -12,20 +12,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/api/:input', (req, res) => {
-    let input = req.params.input;
-    if(input.includes('-')) {
-        response['unix'] = new Date(input).getTime();
-        response['utc'] = new Date(input).toUTCString();
-    } else {
-        response['unix'] = new Date(parseInt(input)).getTime();
-        response['utc'] = new Date(parseInt(input)).toUTCString();
-
-    }
-    if (!response['unix'] || response['utc']) {
-        res.json({ error : "Invalid Date" });
-    };
-    res.json(response);
+app.get('/:input', (req, res) => {
+    res.render('input', {input: req.params.input});
 });
 
 app.get('/api', (req, res) => {

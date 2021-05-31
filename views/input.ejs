@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Timestamp Microservice | Julienmcoding</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+    <h1>Timestamp Microservice</h1>
+    <hr />
+    <div class="container">
+        <h3>Go back to the home page</h3>
+        <ul>
+            <li><a href="./index.ejs">Home</a></li>
+        </ul>
+
+        <h3>The time you have entered is:</h3>
+        <p>
+            <%
+            let unix, utc;
+            if(input.includes('-')) {
+               unix = new Date(input).getTime();
+               utc = new Date(input).toUTCString();
+            } else {
+                unix = new Date(parseInt(input)).getTime();
+                utc = new Date(parseInt(input)).toUTCString();
+            };
+            if (!unix || !utc) { %>
+                <code> { error : "Invalid Date" } </code>
+              <% } else { %>
+            <code> { "unix": <%= unix %> "utc": <%= utc %> }</code>
+            <% } %>
+        </p>
+    </div>
+    <div class="footer">
+      <p>
+        By Julienmcoding and freeCodeCamp.org</a>
+      </p>
+    </div>
+  </body>
+</html>
