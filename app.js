@@ -3,10 +3,13 @@ const app = express();
 
 app.use(express.json());
 
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+
 const response = {};
 
 app.get('/', (req, res) => {
-    res.send('Hello you!');
+    res.render('index');
 });
 
 app.get('/api/:input', (req, res) => {
