@@ -12,14 +12,12 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/:input', (req, res) => {
-    res.render('input', {input: req.params.input});
+app.get('/index', (req, res) => {
+    res.render('index');
 });
 
-app.get('/api', (req, res) => {
-    response['unix'] = new Date().getTime();
-    response['utc'] = new Date().toUTCString();
-    res.json(response);
+app.get('/:input', (req, res) => {
+    res.render('input', {input: req.params.input});
 });
 
 const PORT = process.env.PORT || 3000;
