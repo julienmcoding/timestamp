@@ -6,13 +6,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-const response = {};
-
 app.get('/', (req, res) => {
-    res.render('index');
-});
-
-app.get('/index', (req, res) => {
     res.render('index');
 });
 
