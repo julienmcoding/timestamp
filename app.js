@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
-
-app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
+app.set('view engine', 'ejs');
+
+app.get('/api', (req, res) => {
     res.render('index');
 });
 
-app.get('/:input', (req, res) => {
+app.get('/api/:input', (req, res) => {
     res.render('input', {input: req.params.input});
 });
 
