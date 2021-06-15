@@ -1,6 +1,9 @@
 # Timestamp
 FreeCodeCamp APIs and Microservices Projects - Timestamp Microservice
 
+# Concept:
+Live demo: https://timestamp-julienmcoding.herokuapp.com/
+
 This is a Node.js (with Express.js) little application which is part of the FCC Back End Certification. It takes a date string and gives you back a JSON with Unix value and natural format for the given date.
 
 # User stories:
@@ -24,5 +27,3 @@ Example output:
 { "unix": 1623757264408 "utc": Tue, 15 Jun 2021 11:41:04 GMT }
 ```
 
-# Live demo:
-https://timestamp-julienmcoding.herokuapp.com/
